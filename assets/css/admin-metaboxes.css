@@ -1,0 +1,93 @@
+/**
+ * All of the CSS for your dashboard-specific functionality should be
+ * included in this file.
+ */
+
+.simple-review-table table {
+	-webkit-box-shadow: none;
+	box-shadow: none;
+	margin:  0 0 20px;
+}
+
+.simple-review-table p.label {
+	margin-bottom:5px;
+	font-weight: bold;
+}
+
+.simple-review-section {
+	overflow: hidden;
+	border-bottom: 1px solid #e5e5e5;
+	padding: 5px 12px;
+	margin: 0 -12px;
+}
+
+.simple-review-section .label {
+	float: left;
+	width: 30%;
+}
+
+.simple-review-section textarea,
+.simple-review-section input[type="text"] {
+	width: 70%;
+}
+
+.simple-review-table .simple-review-row-button {
+	text-align: right;
+}
+
+.simple-review-table .order {
+	text-align: center !important;
+	vertical-align: middle;
+	color: #aaa;
+	text-shadow: #fff 0 1px 0;
+	cursor: move;
+}
+
+.simple-review-table,
+.simple-review-table .review-clone {
+	display: none;
+}
+
+.simple-review-table > table > tbody > tr > td.order {
+	background: #f9f9f9;
+}
+
+.simple-review-table table > thead > tr > th,
+.simple-review-table table > tbody > tr > td {
+	border-right: 1px solid #e5e5e5;
+}
+
+.simple-review-table table > thead > tr > th {
+	border-bottom: none;
+	background-color: #f1f1f1;
+}
+
+.simple-review-table table > tbody > tr > td {
+	border-top: 1px solid #e5e5e5;
+}
+
+.simple-review-table table > thead > tr > th:last-child,
+.simple-review-table table > tbody > tr > td:last-child {
+	border-right: none;
+}
+
+.simple-review-table table > tbody > tr > td.controls a {
+	display: inline-block;
+	padding-top: 7px;
+	color: #444;
+	line-height: 1;
+}
+
+.simple-review-table table > tbody > tr > td.controls a:before {
+	content: "\f158";
+	-webkit-font-smoothing: antialiased;
+	font-family: 'dashicons';
+	vertical-align: middle;
+}
+
+.simple-review-table table > tbody > tr.ui-sortable-helper {
+	background: #fff;
+	webkit-box-shadow: 0 1px 1px rgba(0,0,0,.04);
+	box-shadow: 0 1px 1px rgba(0,0,0,.04);
+	border: 1px solid #e5e5e5;
+}
