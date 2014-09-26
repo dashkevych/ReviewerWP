@@ -84,7 +84,7 @@
 					</select>
 				</td>
 				<td class="controls">
-					<a href="#" class="reviwerwp-remove-row" title="Remove"></a>
+					<a href="#" class="reviwerwp-remove-row" title="<?php esc_attr_e( 'Remove', $this->plugin_slug ) ?>"></a>
 				</td>
 			</tr>
 			<?php endforeach; ?>
@@ -110,14 +110,14 @@
 					</select>
 				</td>
 				<td class="controls">
-					<a href="#" class="reviwerwp-remove-row" title="Remove"></a>
+					<a href="#" class="reviwerwp-remove-row" title="<?php esc_attr_e( 'Remove', $this->plugin_slug ) ?>"></a>
 				</td>
 			</tr>
 		</tbody>
 	</table><!-- .widefat -->
 
 	<div class="simple-review-row-button">
-		<a href="#" class="reviwerwp-add-row button button-primary button-medium">Add Rating Row</a>
+		<a href="#" class="reviwerwp-add-row button button-primary button-medium"><?php _e( 'Add Rating Row', $this->plugin_slug ) ?></a>
 	</div><!-- .simple-review-row-button -->
 
 </div><!-- .simple-review-table -->
