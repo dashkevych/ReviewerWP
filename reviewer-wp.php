@@ -189,3 +189,11 @@ function reviwer_wp() {
 	return Reviwer_WP::instance();
 }
 reviwer_wp();
+
+function wptp_modify_html( $classes ) {
+	$classes[] = 'biba';
+	$classes[] = 'boba';
+	$classes[] = 'biba';
+    return $classes;
+}
+//add_filter( 'reviewerwp_review_class', 'wptp_modify_html' );

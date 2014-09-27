@@ -13,9 +13,8 @@ class Reviewer_WP_Review_Box {
 
 		// Load admin style sheet and JavaScript.
 		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_styles' ) );
-		//add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_scripts' ) );
+		//add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_scripts' ) );
 
-		//add_action( 'wp_footer', array( $this, 'review_box' ) );
 		add_filter( 'the_content', array( $this, 'add_review_box' ), 99 );
 	}
 
@@ -92,6 +91,27 @@ class Reviewer_WP_Review_Box {
 	}
 
 	/**
+	 * Retrieve the classes for the review box as an array.
+	 *
+	 * @since    1.0.0
+	 */
+	public function get_review_class() {
+		$classes = array();
+		$classes[] = 'reviewerwp-box';
+		$classes = apply_filters( 'reviewerwp_review_class', $classes );
+		return array_unique( $classes );
+	}
+
+	/**
+	 * Return custom review box classes
+	 *
+	 * @since    1.0.0
+	 */
+	public function review_class() {
+		 echo 'class="' . join( ' ', $this->get_review_class() ) . '"';
+	}
+
+	/**
 	 * Return total review score number
 	 *
 	 * @since    1.0.0
@@ -126,13 +146,13 @@ class Reviewer_WP_Review_Box {
 	public function add_review_box( $content ) {
 		$review_box = $this->get_review_box();
 
-		if( is_singular() ) {
+		if( is_singular() && $this->has_reviews() ) {
 			if( $this->is_top_review_box() ) {
-				$content = $review_box . $content;
+				$content = '<div class="reviewerwp-top">'.$review_box.'</div>' . $content;
 			}
 
 			if( $this->is_bottom_review_box() ) {
-				$content .= $review_box;
+				$content .= '<div class="reviewerwp-bottom">'.$review_box.'</div>';
 			}
 		}
 
@@ -148,9 +168,13 @@ class Reviewer_WP_Review_Box {
 		$review_box = '';
 		$settings = $this->get_review_box_settings();
 
+		ob_start();
+		$this->review_class();
+		$class = ob_get_clean();
+
 		if( !empty( $settings ) ) {
-			$review_box .= '<div class="reviewerwp-box">';
-			$review_box .= '<div class="reviewerwp-box-inner">';
+			$review_box .= '<div '.$class.'>';
+			$review_box .= '<div class="reviewerwp-box-inner clearfix">';
 
 			if( $this->get_review_box_title() ):
 			$review_box .= '<h4 class="reviewerwp-review-title">';

@@ -7,6 +7,19 @@ Global
 	text-align: center;
 }
 
+.reviewerwp-box .criteria .review-label,
+.reviewerwp-box .reviewerwp-review-summary {
+	font-size: 0.85em;
+}
+
+.clearfix:after {
+   content: " "; /* Older browser do not support empty content */
+   visibility: hidden;
+   display: block;
+   height: 0;
+   clear: both;
+}
+
 /*--------------------------------------------------------------
 Review Box
 --------------------------------------------------------------*/
@@ -14,6 +27,25 @@ Review Box
 	background: #eee;
 	padding: 15px;
 	margin-bottom: 30px;
+	box-shadow: 0 0 3px 0px rgba(0,0,0,0.065);
+	border: 1px solid rgba(0,0,0,0.05);
+}
+
+.reviewerwp-top .reviewerwp-box {
+	float: left;
+	width: 45%;
+	margin-right: 30px;
+}
+
+.reviewerwp-bottom .reviewerwp-box .reviewerwp-review-summary {
+	float: left;
+	width: 80%;
+	text-align: inherit;
+	margin-bottom: 0;
+}
+
+.reviewerwp-bottom .reviewerwp-box .reviewerwp-total-score {
+	float: right;
 }
 
 .reviewerwp-box .reviewerwp-box-inner {
@@ -22,10 +54,11 @@ Review Box
 }
 
 .reviewerwp-box .criteria {
-	margin: 5px 0;
+	margin: 3px 0;
 	padding: 0 1px;
 	overflow: auto;
 	opacity: 0.7;
+	font-size: 1em;
 }
 
 .reviewerwp-box .criteria .review-score-number {
@@ -34,7 +67,12 @@ Review Box
 
 .reviewerwp-box .criteria .review-label {
 	text-transform: uppercase;
-	font-size: 0.85em;
+}
+
+.reviewerwp-box .review-score,
+.reviewerwp-box .review-score .review-score-bar {
+	border-radius: 2px;
+	box-shadow: 0 0 2px 0 rgba(55,55,55,0.1);
 }
 
 .reviewerwp-box .review-score {
@@ -43,8 +81,8 @@ Review Box
 }
 
 .reviewerwp-box .review-score .review-score-bar {
-	height: 20px;
-	background: #689FCE;
+	height: 6px;
+	background: #939292;
 }
 
 .reviewerwp-box .reviewerwp-review-title,
@@ -54,7 +92,7 @@ Review Box
 }
 
 .reviewerwp-box .reviewerwp-total-score {
-	font-size: 2.6em;
+	font-size: 2.2em;
 	line-height: 1;
 	opacity: 0.7;
 }
