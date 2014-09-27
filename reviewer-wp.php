@@ -2,7 +2,7 @@
 
 /**
  * Plugin Name:       ReviewerWP
- * Plugin URI:
+ * Plugin URI:		  http://reviwerwp.com/
  * Description:       Simple review plugin for WordPress.
  * Version:           1.0.0
  * Author:            Taras Dahkevych
@@ -36,9 +36,30 @@ final class Reviwer_WP {
 	/**
 	 * The version number
 	 *
-	 * @since 1.0
+	 * @since 1.0.0
 	 */
 	private $version = '1.0.0';
+
+	/**
+	 * Admin review metaboxes
+	 *
+	 * @since 1.0.0
+	 */
+	private $metaboxes;
+
+	/**
+	 * Review box
+	 *
+	 * @since 1.0.0
+	 */
+	private $review_box;
+
+	 /**
+	 * Option names
+	 *
+	 * @since 1.0.0
+	 */
+	public $option_names;
 
 	/**
 	 *
@@ -76,6 +97,13 @@ final class Reviwer_WP {
 			self::$instance->setup_plugin_constants();
 			self::$instance->includes();
 			self::$instance->load_plugin_textdomain();
+
+			if( is_admin() ) {
+				self::$instance->metaboxes = new Reviewer_WP_Metaboxes;
+			}
+
+			self::$instance->option_names = new Reviewer_WP_Option_Names;
+			self::$instance->review_box = new Reviewer_WP_Review_Box;
 		}
 		return self::$instance;
 	}
@@ -107,14 +135,18 @@ final class Reviwer_WP {
 	 * Include required plugin files
 	 *
 	 * @access private
-	 * @since 1.0.0s
+	 * @since 1.0.0
 	 */
 	private function includes() {
+
+		require_once REVIWERWP_PLUGIN_DIR . 'includes/class-option-names.php';
 
 		//Load admin files
 		if( is_admin() ) {
 			require_once REVIWERWP_PLUGIN_DIR . 'includes/admin/metaboxes/class-metaboxes.php';
 		}
+
+		require_once REVIWERWP_PLUGIN_DIR . 'includes/class-review-box.php';
 
 	}
 

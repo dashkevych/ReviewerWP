@@ -1,0 +1,60 @@
+/*--------------------------------------------------------------
+Global
+--------------------------------------------------------------*/
+.reviewerwp-box .reviewerwp-review-title,
+.reviewerwp-box .reviewerwp-review-summary,
+.reviewerwp-box .reviewerwp-total-score {
+	text-align: center;
+}
+
+/*--------------------------------------------------------------
+Review Box
+--------------------------------------------------------------*/
+.reviewerwp-box {
+	background: #eee;
+	padding: 15px;
+	margin-bottom: 30px;
+}
+
+.reviewerwp-box .reviewerwp-box-inner {
+	padding: 25px;
+	border: 1px dashed rgba(0,0,0,0.1);
+}
+
+.reviewerwp-box .criteria {
+	margin: 5px 0;
+	padding: 0 1px;
+	overflow: auto;
+	opacity: 0.7;
+}
+
+.reviewerwp-box .criteria .review-score-number {
+	float: right;
+}
+
+.reviewerwp-box .criteria .review-label {
+	text-transform: uppercase;
+	font-size: 0.85em;
+}
+
+.reviewerwp-box .review-score {
+	background: rgba(255,255,255,0.6);
+	margin-bottom: 15px;
+}
+
+.reviewerwp-box .review-score .review-score-bar {
+	height: 20px;
+	background: #689FCE;
+}
+
+.reviewerwp-box .reviewerwp-review-title,
+.reviewerwp-box .reviewerwp-review-criterias,
+.reviewerwp-box .reviewerwp-review-summary {
+	margin: 0 0 25px;
+}
+
+.reviewerwp-box .reviewerwp-total-score {
+	font-size: 2.6em;
+	line-height: 1;
+	opacity: 0.7;
+}
