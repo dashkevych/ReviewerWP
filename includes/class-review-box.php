@@ -15,6 +15,7 @@ class Reviewer_WP_Review_Box {
 		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_styles' ) );
 		//add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_scripts' ) );
 
+		// Add review box to the poxt content
 		add_filter( 'the_content', array( $this, 'add_review_box' ), 99 );
 	}
 
@@ -135,7 +136,7 @@ class Reviewer_WP_Review_Box {
 			}
 		}
 
-		return $total_score;
+		return apply_filters( 'reviewerwp_total_score', $total_score );
 	}
 
 	/**
