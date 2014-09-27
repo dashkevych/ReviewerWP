@@ -67,20 +67,20 @@
 			<tr class="review-row">
 				<td class="order"><?php echo $key + 1; ?></td>
 				<td width="60%">
-					<input type="text" class="widefat text" name="<?php echo reviwer_wp()->option_names->get_review_box(); ?>[<?php echo esc_attr( $key ); ?>][label]" value="<?php echo esc_attr( $value[label] ); ?>">
+					<input type="text" class="widefat text" name="<?php echo reviwer_wp()->option_names->get_review_box(); ?>[<?php echo esc_attr( $key ); ?>][label]" value="<?php echo esc_attr( $value['label'] ); ?>">
 				</td>
 				<td width="40%">
 					<select class="select widefat" name="<?php echo reviwer_wp()->option_names->get_review_box(); ?>[<?php echo esc_attr( $key ); ?>][score]">
-						<option value="1" <?php selected( $value[score], 1 ); ?>>1</option>
-						<option value="2" <?php selected( $value[score], 2 ); ?>>2</option>
-						<option value="3" <?php selected( $value[score], 3 ); ?>>3</option>
-						<option value="4" <?php selected( $value[score], 4 ); ?>>4</option>
-						<option value="5" <?php selected( $value[score], 5 ); ?>>5</option>
-						<option value="6" <?php selected( $value[score], 6 ); ?>>6</option>
-						<option value="7" <?php selected( $value[score], 7 ); ?>>7</option>
-						<option value="8" <?php selected( $value[score], 8 ); ?>>8</option>
-						<option value="9" <?php selected( $value[score], 9 ); ?>>9</option>
-						<option value="10" <?php selected( $value[score], 10 ); ?>>10</option>
+						<option value="1" <?php selected( $value['score'], 1 ); ?>>1</option>
+						<option value="2" <?php selected( $value['score'], 2 ); ?>>2</option>
+						<option value="3" <?php selected( $value['score'], 3 ); ?>>3</option>
+						<option value="4" <?php selected( $value['score'], 4 ); ?>>4</option>
+						<option value="5" <?php selected( $value['score'], 5 ); ?>>5</option>
+						<option value="6" <?php selected( $value['score'], 6 ); ?>>6</option>
+						<option value="7" <?php selected( $value['score'], 7 ); ?>>7</option>
+						<option value="8" <?php selected( $value['score'], 8 ); ?>>8</option>
+						<option value="9" <?php selected( $value['score'], 9 ); ?>>9</option>
+						<option value="10" <?php selected( $value['score'], 10 ); ?>>10</option>
 					</select>
 				</td>
 				<td class="controls">
