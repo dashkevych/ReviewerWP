@@ -52,7 +52,7 @@ final class Reviwer_WP {
 	 *
 	 * @since 1.0.0
 	 */
-	private $review_box;
+	public $reviews;
 
 	 /**
 	 * Option names
@@ -103,7 +103,7 @@ final class Reviwer_WP {
 			}
 
 			self::$instance->option_names = new Reviewer_WP_Option_Names;
-			self::$instance->review_box = new Reviewer_WP_Review_Box;
+			self::$instance->reviews = new Reviewer_WP_Review_Box;
 		}
 		return self::$instance;
 	}

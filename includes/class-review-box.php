@@ -140,6 +140,19 @@ class Reviewer_WP_Review_Box {
 	}
 
 	/**
+	 * Return total review score percentage number
+	 *
+	 * @since    1.0.0
+	 */
+	public function get_total_score_percentage( $sign = true ) {
+		if( $sign ) {
+			return str_replace( '.', '' , $this->get_total_score() ) . '%';
+		} else {
+			return str_replace( '.', '' , $this->get_total_score() );
+		}
+	}
+
+	/**
 	 * Add review box to the post content
 	 *
 	 * @since    1.0.0
