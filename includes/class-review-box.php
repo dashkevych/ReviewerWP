@@ -215,8 +215,10 @@ class Reviewer_WP_Review_Box {
 			$review_box .= '</div><!-- .reviewerwp-review-summary -->';
 			endif;
 
-			$review_box .= '<div class="reviewerwp-total-score">';
-			$review_box .= $this->get_total_score();
+			$review_box .= '<div class="reviewerwp-total-score" itemprop="reviewRating" itemscope="itemscope" itemtype="http://schema.org/Rating">';
+			$review_box .= '<meta itemprop="worstRating" content="1">';
+			$review_box .= '<meta itemprop="bestRating" content="10">';
+			$review_box .= '<span itemprop="ratingValue">' . $this->get_total_score() . '</span>';
 			$review_box .= '</div><!-- .reviewerwp-total-score -->';
 
 			$review_box .= '</div><!-- .reviewerwp-box-inner -->';
