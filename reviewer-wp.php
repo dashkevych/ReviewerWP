@@ -2,7 +2,7 @@
 
 /**
  * Plugin Name:       ReviewerWP
- * Plugin URI:		  http://reviwerwp.com/
+ * Plugin URI:		  http://reviewerwp.com/
  * Description:       Simple review plugin for WordPress.
  * Version:           1.0.0
  * Author:            Taras Dahkevych
@@ -15,7 +15,6 @@
 
 // If this file is called directly, abort.
 if ( ! defined( 'WPINC' ) )  die;
-
 
 if ( ! class_exists( 'Reviwer_WP' ) ) :
 
@@ -75,7 +74,6 @@ final class Reviwer_WP {
 	 * Initialize the plugin by setting localization and loading public scripts
 	 * and styles
 	 *
-	 * @access private
 	 * @since 1.0.0
 	 */
 	private function __construct() {
@@ -88,7 +86,6 @@ final class Reviwer_WP {
 	/**
 	 * This is the main Reviwer_WP Instance
 	 *
-	 * @access public
 	 * @since 1.0.0
 	 */
 	public static function instance() {
@@ -111,7 +108,6 @@ final class Reviwer_WP {
 	/**
 	 * Setup plugin constants
 	 *
-	 * @access private
 	 * @since 1.0.0
 	 */
 	private function setup_plugin_constants() {
@@ -134,7 +130,6 @@ final class Reviwer_WP {
 	/**
 	 * Include required plugin files
 	 *
-	 * @access private
 	 * @since 1.0.0
 	 */
 	private function includes() {
@@ -153,7 +148,6 @@ final class Reviwer_WP {
 	/**
 	 * Load the plugin text domain for translation
 	 *
-	 * @access public
 	 * @since 1.0.0
 	 */
 	public function load_plugin_textdomain() {
@@ -169,7 +163,6 @@ final class Reviwer_WP {
 	/**
 	 * Return plugin slug name
 	 *
-	 * @access public
 	 * @since 1.0.0
 	 */
 	public function get_plugin_slug() {
