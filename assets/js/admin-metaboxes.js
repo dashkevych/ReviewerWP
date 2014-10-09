@@ -1,14 +1,14 @@
 (function( $ ) {
 	'use strict';
 
-	//Update row orders
+	// Update row orders
 	var simpleReviewUpdateOrder = function( table ) {
 		table.find('> table > tbody > tr.review-row').each(function(i){
 			$(this).children('td.order').html( i + 1 );
 		});
 	};
 
-	//Display review table if needed
+	// Display review table if needed
 	var simpleReviewVisability = function( checkbox, table ) {
 		if( checkbox.is(':checked') ) {
 			table.show();
@@ -21,20 +21,20 @@
 		var reviewTable = $('.simple-review-table');
 		var visivilityCheckbox = $('#reviewerwp-post-visibility');
 
+		// Make review settings visible if needed
 		simpleReviewVisability( visivilityCheckbox, reviewTable );
-
 		visivilityCheckbox.on('click',function() {
 			simpleReviewVisability( visivilityCheckbox, reviewTable );
 		});
 
-		//Add sortable functionality to the review table
+		// Add sortable functionality to the review table
 		reviewTable.find('> table > tbody').sortable({
 			stop : function (event, ui) {
 				simpleReviewUpdateOrder( reviewTable );
 			}
 		});
 
-		//Add new row to the review table
+		// Add new row to the review table
 		reviewTable.find('.reviwerwp-add-row').on('click',function(e) {
 			e.preventDefault();
 			var rowID = reviewTable.find('> table > tbody > .review-row').size();
@@ -46,7 +46,7 @@
 			simpleReviewUpdateOrder( reviewTable );
 		});
 
-		//Remove row to the review table
+		// Remove row to the review table
 		$(document).on('click', '.reviwerwp-remove-row', function(e) {
 			e.preventDefault();
 			$(this).parents('tr.review-row').remove();
