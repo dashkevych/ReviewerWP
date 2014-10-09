@@ -38,11 +38,11 @@
 		reviewTable.find('.reviwerwp-add-row').on('click',function(e) {
 			e.preventDefault();
 			var rowID = reviewTable.find('> table > tbody > .review-row').size();
-			var new_field_html = reviewTable.find('> table > tbody > tr.review-clone').html().replace(/(=["]*[\w-\[\]]*?)(dummyindex)/g, '$1' + rowID ),
-				new_field = $('<tr class="review-row"></tr>').append( new_field_html ),
-				before = reviewTable.find('> table > tbody > .review-clone');
-			new_field.find()
-			before.before( new_field );
+			var newRowHTML = reviewTable.find('> table > tbody > tr.review-clone').html().replace(/(=["]*[\w-\[\]]*?)(dummyindex)/g, '$1' + rowID );
+			var newRow = $('<tr class="review-row"></tr>').append( newRowHTML );
+			var beforeClone = reviewTable.find('> table > tbody > .review-clone');
+
+			beforeClone.before( newRow );
 			simpleReviewUpdateOrder( reviewTable );
 		});
 
