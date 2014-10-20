@@ -98,7 +98,7 @@ class Reviewer_WP_Metaboxes {
 			return;
 		}
 
-		if( ! wp_verify_nonce( $_POST[$this->review_noncename], $this->review_noncename ) ) {
+		if( !isset( $_POST[$this->review_noncename] ) || !wp_verify_nonce( $_POST[$this->review_noncename], $this->review_noncename ) ) {
 			return;
 		}
 
